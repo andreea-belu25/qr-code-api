@@ -1,5 +1,3 @@
-``README``
-
 Tools: Java, SpringBoot
 
 Utility: This Java code defines a REST API using Spring Boot to generate and return a simple white square image (which could be a placeholder for a QR code)
