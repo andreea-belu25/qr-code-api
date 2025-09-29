@@ -12,7 +12,7 @@ Development:
 - Application.java 
 		- The Main class of the application.
 
-    - QRCodeController.java
+- QRCodeController.java
         - Spring imports are used for handling HTTP requests and responses.
         - @RequestMapping("/api"): Maps all URLs starting with /api to methods in this controller.
 
