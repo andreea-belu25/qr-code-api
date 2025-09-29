@@ -10,18 +10,18 @@ Development:
 --
 
 - Application.java 
-		- The Main class of the application.
+	- The Main class of the application.
 
 - QRCodeController.java
-        - Spring imports are used for handling HTTP requests and responses.
-        - @RequestMapping("/api"): Maps all URLs starting with /api to methods in this controller.
+	- Spring imports are used for handling HTTP requests and responses.
+    - @RequestMapping("/api"): Maps all URLs starting with /api to methods in this controller.
 
-        - QR Code Image Endpoint
-        	- @GetMapping("/qrcode"): Maps the /api/qrcode endpoint to this method. It responds to HTTP GET requests.
-        	- @RequestParam(required = false): Marks size and type as optional query parameters that the client can pass (e.g., /api/qrcode?size=200&type=png).
-        	- The method returns a ResponseEntity<byte[]>, which contains the image as a byte array, along with HTTP status and headers.
+    - QR Code Image Endpoint
+      - @GetMapping("/qrcode"): Maps the /api/qrcode endpoint to this method. It responds to HTTP GET requests.
+      - @RequestParam(required = false): Marks size and type as optional query parameters that the client can pass (e.g., /api/qrcode?size=200&type=png).
+      - The method returns a ResponseEntity<byte[]>, which contains the image as a byte array, along with HTTP status and headers.
 
-        - Parameter Validation
+    - Parameter Validation
             - If the size or the type is not provided
             - If the size is not between the given dimensions
             - If the type of the image is not png, jpg/jpeg or gif
