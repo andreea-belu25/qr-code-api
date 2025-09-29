@@ -9,7 +9,7 @@ This Java code defines a REST API using Spring Boot to generate and return a sim
 Development:
 --
 
-	- Application.java 
+- Application.java 
 		- The Main class of the application.
 
     - QRCodeController.java
