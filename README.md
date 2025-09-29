@@ -1,5 +1,6 @@
-Tools: Java, SpringBoot
+Tools:
 --
+Java, SpringBoot
 
 Utility: 
 --
@@ -21,24 +22,23 @@ Development:
       - @RequestParam(required = false): Marks size and type as optional query parameters that the client can pass (e.g., /api/qrcode?size=200&type=png).
       - The method returns a ResponseEntity<byte[]>, which contains the image as a byte array, along with HTTP status and headers.
 
-    - Parameter Validation
-            - If the size or the type is not provided
-            - If the size is not between the given dimensions
-            - If the type of the image is not png, jpg/jpeg or gif
-            => a 400 Bad Request is sent
+	- Parameter Validation
+      - If the size or the type is not provided
+      - If the size is not between the given dimensions
+      - If the type of the image is not png, jpg/jpeg or gif
+      => a 400 Bad Request is sent
 
-        - Image Creation
-	        - A BufferedImage of the specified size is created with a white background.
-		    - Graphics2D is used to "draw" onto the image. In this case, the entire image is filled with white.
+    - Image Creation
+		- A BufferedImage of the specified size is created with a white background.
+		- Graphics2D is used to "draw" onto the image. In this case, the entire image is filled with white.
 
+    - Image Serialization
+	    - The image is written to a ByteArrayOutputStream and the resulting byte array is used as the response body.
 
-        - Image Serialization
-	        - The image is written to a ByteArrayOutputStream and the resulting byte array is used as the response body.
+    - Media Type Mapping
+	    - The content type of the response is set based on the image format.
 
-        - Media Type Mapping
-	        - The content type of the response is set based on the image format.
+    - Returning the response
 
-        - Returning the response
-
-        - Error Handling
-	        - If an error occurs during image creation or serialization, the method returns a 500 Internal Server Error response with an error message.
+  	- Error Handling
+	    - If an error occurs during image creation or serialization, the method returns a 500 Internal Server Error response with an error message.
